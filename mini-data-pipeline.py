@@ -69,5 +69,7 @@ if __name__ == "__main__":
     processed = process_data(raw_data)
     print("\nReturned dictionary:")
     print(processed)
+
     print("\n")
-    print_report(processed, raw_data)
+    row_count = len([line for line in raw_data.splitlines() if line.split() and not line.lower().startswith('name')])
+    print_report(processed, row_count)
